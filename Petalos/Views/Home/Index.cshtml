@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Petalos.Models.DatosFloresssss>
+@{
+    Layout = "_Layout";
+}
+<div id="foto">
+    <img src="~/images/img09.jpg" alt="" />
+</div>
+<section>
+    <h2>¡Bienvenido a Pétalos & Flores!</h2>
+
+    <p>
+        <strong>Pétalos & Flores</strong> es un sitio web con el propósito de practicar y comprender el manejo de base
+        de datos utilizando MySQL Server y ASP.NET MVC.
+    </p>
+    <p>
+        Dar click en el nombre de alguna flor del menú en la parte inferior para ver la descripción
+        y sus caracterísiticas.
+    </p>
+
+</section>
+<nav>
+    <ul>
+        @foreach (var f in Model)
+        {
+            <li><a href="~/informacion/@f.Nombre.Replace(" ","-")">@f.Nombre</a></li>
+        }
+    </ul>
+</nav>
